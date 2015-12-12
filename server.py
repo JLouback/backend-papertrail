@@ -5,6 +5,11 @@ try:
 except ImportError:
   from http.server import SimpleHTTPRequestHandler as Handler
   from http.server import HTTPServer as Server
+try:
+  import gensim
+  print( "SUCCESSFULLY IMPORTED GENSIM" )
+except ImportError:
+  print( "FAILED TO IMPORT GENSIM" )
 
 # Read port selected by the cloud for our application
 PORT = int(os.getenv('PORT', 8000))
